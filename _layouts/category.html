@@ -7,15 +7,14 @@ layout: default
   <h1 class="page-heading">{{ page.title }}</h1>
 {%- endif -%}
 
-{{ content }}
-
 <!-- 如果site.posts.size > 0 即发布分文章数大于0 -->
-{%- if site.posts.size > 0 -%}
+{%- if site.categories[page.category].size > 0 -%}
   <ul class="posts">
     <li class="posts-labelgroup" id="posts-labelgroup">
-      <h1 id="posts-label">posts</h1>
+      <h1 id="posts-label">{{ page.category }}</span>
+      </h1>
       <!-- 如果设置了 site.plainwhite.search 为true, 则显示搜索条 -->
-      {% if site.plainwhite.search %}
+      <!-- {% if site.plainwhite.search_category %}
       <div class="search-container">
         <div class="search-section">
           <i class="icon-search"></i>
@@ -23,11 +22,11 @@ layout: default
         </div>
         <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
       </div>
-      {% endif %}
+      {% endif %} -->
     </li>
 
-    <!-- 遍历所有的文章 -->
-    {%- for post in site.posts -%}
+    <!-- 遍历该category下的文章 -->
+    {%- for post in site.categories[page.category] -%}
       <li>
         <!-- 如果设置了 site.plainwhite.date_format,则使用这个日志格式,否则使用默认格式 -->
         {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}

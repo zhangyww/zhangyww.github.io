@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- html的lang，这里是en -->
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<!-- 当没有设置viewport时，默认大部分移动端浏览器渲染时以layout-widthh=980px进行渲染，然后再进行缩放 -->
+<!-- width用来设置layout-width的大小，可以设置成确切的像素值，也可以设置成device-width这样的值，表示layout-width为设备宽度 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 字体css -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<!-- 绝对路径从github page根目录为根路径 -->
+<!-- relative_url 将配置种的base_url添加到前面，base_url默认是/ -->
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- 如果page没有title属性，则使用site的title -->
+<title>zhangyw's blog</title>
+<!-- seo插件会添加如下内容作为seo的内容 -->
+<!-- title: site.title + site.description -->
+<!-- meta: property="og:title" content="site.title" -->
+<!-- meta: property="description" content="site.description" -->
+<!-- meta: property="og:description" content="site.description" -->
+<!-- meta: property="canonical" content="站点的url" -->
+<!-- meta: property="og:url" content="站点的url" -->
+<!-- meta: property="og:site_name" content="site.title" -->
+<!-- script: type="application/ld+json"  -->
+<!-- {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": site.title,
+    "headline": site.title,
+    "description": site.description,
+    "url": 站点的url
+} -->
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>zhangyw’s blog - Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
+<meta property="og:title" content="zhangyw’s blog" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/categories/basic" />
+<meta property="og:url" content="http://localhost:4000/categories/basic" />
+<meta property="og:site_name" content="zhangyw’s blog" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "WebPage",
+"headline": "zhangyw’s blog",
+"description": "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.",
+"url": "http://localhost:4000/categories/basic"}</script>
+<!-- End Jekyll SEO tag -->
+
+<!-- 如果将site.plainwhite下的dark_mode设置成 true，那么加载darkmode主题的js -->
+<!-- 在body标签里已经有了 黑色主题的判断的加载 -->
+<!-- 
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+ -->
+</head>
+
+<!-- 如果page的layout为 site.plainwhite.condensed_mobile 中的任意一个 -->
+<!-- 则设置 condensed_class 为 "condensed" --><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header ">
+      <div class="about-title">
+      <!-- 头像链接，点击头像用于回到首页 -->
+      <a href="/">
+        <!-- 如果同时设置了 site.plainwhite.portfolio_image_dark 黑色主题的头像 和 site.plainwhite.dark_mode 黑色模式-->
+        <!-- 那么设置两种图片，分别为白色主题的头像和黑色主题的头像 -->
+        <!-- 否则只需要白色主题的头像就可以了 -->
+        
+        <img src="/assets/header.png" alt="zhangyw" />
+        
+      </a>
+      <!-- 头像的名称site.plainwhite.name，点击名称回到主页 -->
+      <h2 id="title">
+        <a href="/">zhangyw</a>
+      </h2>
+      </div>
+      <!-- 如果设置了网站的标签 site.plainwhite.tagline，那么显示tagline --><p class="tagline">Developer</p><nav class="navs">
+        
+        <a href="/categories">
+          <div class="navs-entry">归类</div>
+        </a>
+        <a href="/aboutme">
+          <div class="navs-entry">关于我</div>
+        </a></nav></div>
+
+      <!-- 将如下内容保存到footer变量中 -->
+      
+
+      <!-- 显示footer变量 -->
+      
+
+      <!-- 如果设置了 社交标签，site.plainwhite.social_links 则显示 --><ul class="social about-footer "><a href="https://github.com/zhangyww" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><!-- 如果设置了导航 site.plainwhite.navigation 则显示 --><!-- 显示copyright 取年份 -->
+      <p class="about-footer ">&copy;
+        2021</p>
+
+      <!-- 如果 site.plainwhite.dark_mode=true开启了黑暗主题，那么显示切换主题的按钮--><div class="about-footer ">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div><!-- 结束采集footer变量内容 -->
+      
+    </section>
+
+    <!-- 页面内容 -->
+    <section class="content">
+      <!-- 如果该页又page.title,则显示page.title --><!-- 如果site.posts.size > 0 即发布分文章数大于0 --><ul class="posts">
+    <li class="posts-labelgroup" id="posts-labelgroup">
+      <h1 id="posts-label">basic</span>
+      </h1>
+      <!-- 如果设置了 site.plainwhite.search 为true, 则显示搜索条 -->
+      <!--  -->
+    </li>
+
+    <!-- 遍历该category下的文章 --><li>
+        <!-- 如果设置了 site.plainwhite.date_format,则使用这个日志格式,否则使用默认格式 --><a class="post-link" href="/basic/2021/06/05/%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E6%95%B0%E6%8D%AE.html">
+          <!-- 显示文章的title, escape -->
+          <h2 class="post-title">性能指标数据</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <!-- 显示文章的日期 -->
+            <i class="icon-calendar"></i>
+            Jun 5, 2021
+          </div>
+          <!-- 如果这个post有分类标签,则显示所有的分类标签 --><ul class="post-categories"><a href="/categories/basic">
+              <li>basic</li>
+            </a></ul></div>
+        <div class="post">
+          <!-- 如果设置了 site.show_excerpts,则显示每篇文章的摘要 --></div>
+      </li></ul>
+
+  <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+	</svg><a href="/feed.xml">Subscribe</a></p> -->
+    </section>
+
+    <!-- 响应式页面,移动端页面时的footer -->
+    <footer class="">
+      
+
+      <!-- 如果设置了 社交标签，site.plainwhite.social_links 则显示 --><ul class="social about-footer "><a href="https://github.com/zhangyww" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><!-- 如果设置了导航 site.plainwhite.navigation 则显示 --><!-- 显示copyright 取年份 -->
+      <p class="about-footer ">&copy;
+        2021</p>
+
+      <!-- 如果 site.plainwhite.dark_mode=true开启了黑暗主题，那么显示切换主题的按钮--><div class="about-footer ">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div><!-- 结束采集footer变量内容 -->
+      
+    </footer>
+  </main>
+
+  <!-- 如果设置了 site.plainwhite.dark_mode为true,加载黑色主题的js -->
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+
+  <!-- 如果设置了页面分析的id,则加载google分析 --><!-- 如果设置了  site.plainwhite.search为true 则加载搜索需要用的js-->
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

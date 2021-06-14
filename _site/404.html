@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<!-- 当没有设置viewport时，默认大部分移动端浏览器渲染时以layout-widthh=980px进行渲染，然后再进行缩放 -->
+<!-- width用来设置layout-width的大小，可以设置成确切的像素值，也可以设置成device-width这样的值，表示layout-width为设备宽度 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 字体css -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<!-- 绝对路径从github page根目录为根路径 -->
+<!-- relative_url 将配置种的base_url添加到前面，base_url默认是/ -->
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- 如果page没有title属性，则使用site的title -->
+<title>Page Not Found</title>
+<!-- seo插件会添加如下内容作为seo的内容 -->
+<!-- title: site.title + site.description -->
+<!-- meta: property="og:title" content="site.title" -->
+<!-- meta: property="description" content="site.description" -->
+<!-- meta: property="og:description" content="site.description" -->
+<!-- meta: property="canonical" content="站点的url" -->
+<!-- meta: property="og:url" content="站点的url" -->
+<!-- meta: property="og:site_name" content="site.title" -->
+<!-- script: type="application/ld+json"  -->
+<!-- {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": site.title,
+    "headline": site.title,
+    "description": site.description,
+    "url": 站点的url
+} -->
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Page Not Found - zhangyw’s blog</title>
+<meta property="og:title" content="Page Not Found" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/404.html" />
+<meta property="og:url" content="http://localhost:4000/404.html" />
+<meta property="og:site_name" content="zhangyw’s blog" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "WebPage",
+"headline": "Page Not Found",
+"description": "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.",
+"url": "http://localhost:4000/404.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+<!-- 如果将site.plainwhite下的dark_mode设置成 true，那么加载darkmode主题的js -->
+<!-- 在body标签里已经有了 黑色主题的判断的加载 -->
+<!-- 
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+ -->
+<style>
+	h2 {
+		font-feature-settings: "lnum";
+		background-color: #ddd;
+		width: 140px;
+		height: 140px;
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-size: 20px;
+		height: 80vh;
+	}
+	p {text-align: center; line-height: 2em;}
+	</style>
+</head>
+<body>
+	<h2>404</h2>
+	<p>Page not found.</p>
+</body>
+</html>

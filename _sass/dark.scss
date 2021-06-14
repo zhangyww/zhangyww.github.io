@@ -13,6 +13,16 @@
 		img.dark {
 			display: inline;
 		}
+
+		// 首页导航
+		.navs {
+			a {
+				text-decoration: none;
+			}
+			.navs-entry {
+				background-color: #333;
+			}
+		}
 	}
 	.post p {
 		color: #ddd;
@@ -50,9 +60,24 @@
 		}
 	}
 
+
+	.categories-entry {
+		background-color: #333;
+		color: #fff;
+	}
+	.categories-name {
+		background-color: #333;
+	}
+	.categories-count {
+		background-color: #111;
+		color: #DDD;
+	}
+
+
 	a {
 		color: $dark_link_color;
 	}
+
 	#title a {
 		color: #fff;
 		&:hover {

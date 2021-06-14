@@ -1,0 +1,45 @@
+---
+layout: default
+permalink: /categories
+---
+
+<!-- 如果该页又page.title,则显示page.title -->
+{%- if page.title -%}
+  <h1 class="page-heading">{{ page.title }}</h1>
+{%- endif -%}
+
+<!-- 如果site.posts.size > 0 即发布分文章数大于0 -->
+{%- if site.categories.size > 0 -%}
+  <ul class="categories">
+    <li class="posts-labelgroup" id="posts-labelgroup">
+      <h1 id="posts-label">归类</h1>
+      <!-- 如果设置了 site.plainwhite.category_search 为true, 则显示分类搜索条 -->
+      {% if site.plainwhite.category_search %}
+      <div class="search-container">
+        <div class="search-section">
+          <i class="icon-search"></i>
+          <input type="text" name="search" id="searchbar" autocomplete="off" aria-label="search in posts">
+        </div>
+        <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
+      </div>
+      {% endif %}
+    </li>
+
+    <!-- 遍历所有的category -->
+    {%- for category in site.categories -%}
+    <ul class="categories-container">
+      <a href="/categories/{{ category[0] }}" >
+        <li class="categories-entry">
+          <!-- 如果这个post有分类标签,则显示所有的分类标签 -->
+          <span class="categories-name">{{ category[0] }}</span>      
+          <span class="categories-count">{{ category[1].size }}</span>
+        </li>
+      </a>
+    </ul>
+    {%- endfor -%}
+  </ul>
+
+  <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
+		<use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
+	</svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p> -->
+{%- endif -%}

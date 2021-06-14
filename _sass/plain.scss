@@ -109,6 +109,22 @@ main {
       white-space: pre-wrap;
       line-height: normal;
     }
+
+    // 首页导航
+    .navs {
+      a {
+        text-decoration: none;
+      }
+      .navs-entry {
+        float: left;
+        margin: 0 2px;
+        padding: 2px 6px;
+        border-radius: 2px;
+        background-color: #e3e3e3;
+        font-size: 14px;
+      }
+    }
+
     img {
       max-width: 150px;
     }
@@ -285,6 +301,52 @@ main {
   overflow: hidden;
   transition: width 0.1s;
 }
+
+
+.categories {
+  list-style-type: none;
+  margin: 45px 30px;
+  padding-inline-start: 0;
+  @media screen and (max-width: $smallMobileW) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: $mobileW) {
+    padding: 0 !important;
+    margin-top: 0;
+  }
+}
+
+.categories-container {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.categories-entry {
+  list-style-type: none;
+  float: left;
+  background-color: #e3e3e3;
+  font-size: 14px;
+  padding: 5px 5px 5px 20px;
+  border-radius: 2px;
+  @media screen and (max-width: $mobileW) {
+    margin-top: 5px;
+  }
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.categories-count {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 10px;
+  padding: 0px 6px;
+  border-radius: 12px;
+}
+
+
 table {
   th, td {
     padding: 8px 13px;

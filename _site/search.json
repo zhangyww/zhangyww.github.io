@@ -1,0 +1,51 @@
+[
+  
+    {
+      "title"    : "ssh",
+      "title-lower"    : "ssh",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "tools",
+      "tags"     : "",
+      "url"      : "/tools/2021/06/13/ssh.html",
+      "date"     : "2021-06-13 23:33:36 +0800",
+      "content"     : "使用autossh创建ssh反向代理autossh -M 20000 -R 10022:localhost:22 root@106.52.17.148 -p 22# 其中参数# -M指定autossh监听的用于心跳保持的端口#   -M可以同时指定本机监听的端口和代理服务器监听的端口，如果不指定则是port+1# -R用于指定反向代理配置#   10022为代理服务气监听端口，10022前面..."
+    } ,
+  
+    {
+      "title"    : "nat",
+      "title-lower"    : "nat",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "network",
+      "tags"     : "",
+      "url"      : "/network/2021/06/05/nat.html",
+      "date"     : "2021-06-05 22:36:00 +0800",
+      "content"     : "nat分类(1). static nat (静态nat，又称为basic)内网的的每一个IP要映射到NAT设备的一个公网IP。这种NAT映射并不能节省公网IP的使用。(2). pooled nat (动态nat)     todo(3). NAPT (Network Address Port Tranlation, 网络地址端口转换)其中NAPT又能够分为锥型NAT和对称型NAT两种。锥型N..."
+    } ,
+  
+    {
+      "title"    : "性能指标数据",
+      "title-lower"    : "性能指标数据",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "basic",
+      "tags"     : "",
+      "url"      : "/basic/2021/06/05/%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%E6%95%B0%E6%8D%AE.html",
+      "date"     : "2021-06-05 22:36:00 +0800",
+      "content"     : "速度指标如果cpu的主频是2.5G, 那么一个cycle就需要0.4ns.  CPU L1缓存:  4 cycles	(1.6ns)  CPU L2缓存:  11 cycles (4.4ns)  L3 共享缓存: 39 cycles (15.6ns)  内存 (Main Memory): 107 cycles (42.8ns)大小  CPU L1缓存: 2 - 64kB  CPU L2缓存:..."
+    } ,
+  
+    {
+      "title"    : "Integrating razorpay into your webapp",
+      "title-lower"    : "integrating razorpay into your webapp",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "JavascriptNodeJS",
+      "tags"     : "",
+      "url"      : "/javascript/nodejs/2019/03/23/welcome-to-jekyll.html",
+      "date"     : "2019-03-23 23:33:36 +0800",
+      "content"     : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ..."
+    } 
+  
+]

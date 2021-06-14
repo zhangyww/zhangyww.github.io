@@ -1,24 +1,36 @@
 ---
 layout: default
 ---
+
+<!-- 如果设置了 site.plainwhite.date_format 则使用这个日志格式,否则使用默认值 -->
 {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
 <div class="post-container">
+  <!-- 显示文章标题 -->
   <a class="post-link" href="{{ page.url | relative_url }}">
     <h2 class="post-title">{{ page.title | escape }}</h2>
   </a>
+  <!-- 显示文章元信息 -->
   <div class="post-meta">
+    <!-- 显示文章日期 page.date -->
     <div class="post-date"><i class="icon-calendar"></i>{{ page.date | date: date_format }}</div>
+    <!-- 如果文章 有 page.categories 则显示-->
     {%- if page.categories.size > 0 -%}
     <ul class="post-categories">
       {%- for tag in page.categories -%}
-      <li>{{ tag }}</li>
+      <a href="/categories/{{ tag }}">
+        <li>{{ tag }}</li>
+      </a>
       {%- endfor -%}
     </ul>
     {%- endif -%}
   </div>
+
+  <!-- 显示文章内容 -->
   <div class="post">
     {{ content }}
   </div>
+
+  <!-- 显示评论和留言的,目前没有使用 -->
   {%- if site.plainwhite.disqus_shortname -%}
   <div id="disqus_thread" style="margin-top:25px"></div>
   <script>

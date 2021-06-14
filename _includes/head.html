@@ -1,10 +1,35 @@
 <meta charset="UTF-8">
+<!-- 当没有设置viewport时，默认大部分移动端浏览器渲染时以layout-widthh=980px进行渲染，然后再进行缩放 -->
+<!-- width用来设置layout-width的大小，可以设置成确切的像素值，也可以设置成device-width这样的值，表示layout-width为设备宽度 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 字体css -->
 <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<!-- 绝对路径从github page根目录为根路径 -->
+<!-- relative_url 将配置种的base_url添加到前面，base_url默认是/ -->
 <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+<!-- 如果page没有title属性，则使用site的title -->
 <title>{{ page.title | default: site.title }}</title>
+<!-- seo插件会添加如下内容作为seo的内容 -->
+<!-- title: site.title + site.description -->
+<!-- meta: property="og:title" content="site.title" -->
+<!-- meta: property="description" content="site.description" -->
+<!-- meta: property="og:description" content="site.description" -->
+<!-- meta: property="canonical" content="站点的url" -->
+<!-- meta: property="og:url" content="站点的url" -->
+<!-- meta: property="og:site_name" content="site.title" -->
+<!-- script: type="application/ld+json"  -->
+<!-- {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": site.title,
+    "headline": site.title,
+    "description": site.description,
+    "url": 站点的url
+} -->
 {% seo %}
-{% if site.plainwhite.dark_mode %}
+<!-- 如果将site.plainwhite下的dark_mode设置成 true，那么加载darkmode主题的js -->
+<!-- 在body标签里已经有了 黑色主题的判断的加载 -->
+<!-- {% if site.plainwhite.dark_mode %}
 <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
-{% endif %}
+{% endif %} -->

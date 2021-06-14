@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!-- html的lang，这里是en -->
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<!-- 当没有设置viewport时，默认大部分移动端浏览器渲染时以layout-widthh=980px进行渲染，然后再进行缩放 -->
+<!-- width用来设置layout-width的大小，可以设置成确切的像素值，也可以设置成device-width这样的值，表示layout-width为设备宽度 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 字体css -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<!-- 绝对路径从github page根目录为根路径 -->
+<!-- relative_url 将配置种的base_url添加到前面，base_url默认是/ -->
+<link rel="stylesheet" href="/assets/css/style.css">
+<!-- 如果page没有title属性，则使用site的title -->
+<title>ssh</title>
+<!-- seo插件会添加如下内容作为seo的内容 -->
+<!-- title: site.title + site.description -->
+<!-- meta: property="og:title" content="site.title" -->
+<!-- meta: property="description" content="site.description" -->
+<!-- meta: property="og:description" content="site.description" -->
+<!-- meta: property="canonical" content="站点的url" -->
+<!-- meta: property="og:url" content="站点的url" -->
+<!-- meta: property="og:site_name" content="site.title" -->
+<!-- script: type="application/ld+json"  -->
+<!-- {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": site.title,
+    "headline": site.title,
+    "description": site.description,
+    "url": 站点的url
+} -->
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>ssh - zhangyw’s blog</title>
+<meta property="og:title" content="ssh" />
+<meta name="description" content="使用autossh创建ssh反向代理" />
+<meta property="og:description" content="使用autossh创建ssh反向代理" />
+<link rel="canonical" href="http://localhost:4000/tools/2021/06/13/ssh.html" />
+<meta property="og:url" content="http://localhost:4000/tools/2021/06/13/ssh.html" />
+<meta property="og:site_name" content="zhangyw’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-13T23:33:36+08:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "ssh",
+"datePublished": "2021-06-13T23:33:36+08:00",
+"description": "使用autossh创建ssh反向代理",
+"url": "http://localhost:4000/tools/2021/06/13/ssh.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+<!-- 如果将site.plainwhite下的dark_mode设置成 true，那么加载darkmode主题的js -->
+<!-- 在body标签里已经有了 黑色主题的判断的加载 -->
+<!-- 
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+ -->
+</head>
+
+<!-- 如果page的layout为 site.plainwhite.condensed_mobile 中的任意一个 -->
+<!-- 则设置 condensed_class 为 "condensed" --><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <!-- 头像链接，点击头像用于回到首页 -->
+      <a href="/">
+        <!-- 如果同时设置了 site.plainwhite.portfolio_image_dark 黑色主题的头像 和 site.plainwhite.dark_mode 黑色模式-->
+        <!-- 那么设置两种图片，分别为白色主题的头像和黑色主题的头像 -->
+        <!-- 否则只需要白色主题的头像就可以了 -->
+        
+        <img src="/assets/header.png" alt="zhangyw" />
+        
+      </a>
+      <!-- 头像的名称site.plainwhite.name，点击名称回到主页 -->
+      <h2 id="title">
+        <a href="/">zhangyw</a>
+      </h2>
+      </div>
+      <!-- 如果设置了网站的标签 site.plainwhite.tagline，那么显示tagline --><p class="tagline">Developer</p><nav class="navs">
+        
+        <a href="/categories">
+          <div class="navs-entry">归类</div>
+        </a>
+        <a href="/aboutme">
+          <div class="navs-entry">关于我</div>
+        </a></nav></div>
+
+      <!-- 将如下内容保存到footer变量中 -->
+      
+
+      <!-- 显示footer变量 -->
+      
+
+      <!-- 如果设置了 社交标签，site.plainwhite.social_links 则显示 --><ul class="social about-footer condensed"><a href="https://github.com/zhangyww" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><!-- 如果设置了导航 site.plainwhite.navigation 则显示 --><!-- 显示copyright 取年份 -->
+      <p class="about-footer condensed">&copy;
+        2021</p>
+
+      <!-- 如果 site.plainwhite.dark_mode=true开启了黑暗主题，那么显示切换主题的按钮--><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div><!-- 结束采集footer变量内容 -->
+      
+    </section>
+
+    <!-- 页面内容 -->
+    <section class="content">
+      <!-- 如果设置了 site.plainwhite.date_format 则使用这个日志格式,否则使用默认值 --><div class="post-container">
+  <!-- 显示文章标题 -->
+  <a class="post-link" href="/tools/2021/06/13/ssh.html">
+    <h2 class="post-title">ssh</h2>
+  </a>
+  <!-- 显示文章元信息 -->
+  <div class="post-meta">
+    <!-- 显示文章日期 page.date -->
+    <div class="post-date"><i class="icon-calendar"></i>Jun 13, 2021</div>
+    <!-- 如果文章 有 page.categories 则显示--><ul class="post-categories"><a href="/categories/tools">
+        <li>tools</li>
+      </a></ul></div>
+
+  <!-- 显示文章内容 -->
+  <div class="post">
+    <h1 id="使用autossh创建ssh反向代理">使用autossh创建ssh反向代理</h1>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>autossh <span class="nt">-M</span> 20000 <span class="nt">-R</span> 10022:localhost:22 root@106.52.17.148 <span class="nt">-p</span> 22
+<span class="c"># 其中参数</span>
+<span class="c"># -M指定autossh监听的用于心跳保持的端口</span>
+<span class="c">#   -M可以同时指定本机监听的端口和代理服务器监听的端口，如果不指定则是port+1</span>
+<span class="c"># -R用于指定反向代理配置</span>
+<span class="c">#   10022为代理服务气监听端口，10022前面可以指定监听的IP。不指定则为127.0.0.1</span>
+<span class="c">#   localhost:22为本地的ssh服务地址，向代理端口进行的ssh连接会转发到该地址。</span>
+<span class="c"># root@106.52.17.148 -p 22为代理服务ssh的信息</span>
+</code></pre></div></div>
+
+<p>如果需要免密创建ssh的反向代理，可以通过公钥验证的方式</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>autossh <span class="nt">-M</span> 20000 <span class="nt">-R</span> 10022:localhost:22 <span class="nt">-i</span> /path/to/your/private_key root@106.52.17.148 <span class="nt">-p</span> 22
+
+<span class="c"># -i 用于指定私钥文件</span>
+<span class="c"># 公钥和私钥可以通过ssh-keygen创建</span>
+
+ssh-keygen
+<span class="c"># 如果指定了公私钥保存的地址为 /path/to/your/id_rsa</span>
+<span class="c"># 那么会生成两个文件</span>
+<span class="c">#   /path/to/your/id_rsa.pub	这个是公钥文件</span>
+<span class="c">#	/path/to/your/id_rsa		这个是私钥文件</span>
+<span class="c"># 然后，拷贝公钥id_rsa.pub中的内容</span>
+<span class="c"># 追加到代理服务器的 ~/.ssh/authorized_keys文件</span>
+<span class="c"># 然后就可以通过ssh或autossh时通过—i指定私钥文件进行免密登录了</span>
+<span class="c"># 如果不指定—i,那么如果是公钥验证的话，默认的私钥文件为</span>
+<span class="c"># ~/.ssh/id_rsa.pub</span>
+</code></pre></div></div>
+
+<p>如果想要指定代理服务，代理ssh监听的IP，而非127.0.0.1，那么代理服务器中需要将sshd_config配置文件中的GatewayPorts设置成yes</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># @file /etc/ssh/sshd_config</span>
+GatewayPorts <span class="nb">yes</span>
+</code></pre></div></div>
+
+<p>下面是win10通过wsl中的autossh创建反向代理的过程。wsl使用的是ubuntu。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 通过add-apt-repository增加apt源</span>
+<span class="nb">sudo </span>add-apt-repository ppa:eugenesan/ppa
+
+<span class="c"># 通过apt-get update 更新apt源</span>
+<span class="nb">sudo </span>apt-get update
+
+<span class="c"># 安装autossh</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>autossh
+
+<span class="c"># 后面就可以根据上面的autossh创建反向代理的过程进行</span>
+</code></pre></div></div>
+
+<h1 id="使用ssh翻墙">使用ssh翻墙</h1>
+
+<p>ssh的-D选项可以创建创建一个 应用层的 端口转发，可以利用这个，进行翻墙浏览国外网站。-D可以指定一个本地的IP和端口[bind_address]:port，通过这个本地代理地址，可以加浏览器的网页请求代理到远程服务器进行请求，如果远程服务器在墙外，那么就可以访问国外网站了。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-N</span> <span class="nt">-D</span> 16666 root@47.251.7.93 <span class="nt">-p</span> 22
+<span class="c"># -N 不执行远程命令，只进行端口转发</span>
+<span class="c"># -D 指定本地用于代理请求的IP和端口，IP可选</span>
+
+<span class="c"># -i 可用于指定私钥用于公钥认证</span>
+ssh <span class="nt">-N</span> <span class="nt">-D</span> 16666 <span class="nt">-i</span> /path/to/your/id_rsa root@47.251.7.93 <span class="nt">-p</span> 22
+</code></pre></div></div>
+
+<p>如果要保持ssh连接，可以使用autossh。</p>
+
+<p>另外也可以通过putty等ssh客户端创建这个代理</p>
+
+<h2 id="使用putty-创建的过程">使用putty 创建的过程</h2>
+
+<ol>
+  <li>在session的Host Name中填远程服务器IP，Port填远程服务器ssh端口。</li>
+  <li>选择ssh标签下的Tunnels标签。选择Dynamic，在Add new forward port中的SourcePort中填写本地代理监听的端口，这里填16666，然后点击Add。</li>
+  <li>在session页可以保存刚才的配置。然后open。</li>
+  <li>ssh的auth标签页中，可以在PrivateKey file for authentication中浏览添加ssh私钥文件，用于免密的公钥认证登录。ssh私钥和公钥可以通过ssh-keygen生成。</li>
+</ol>
+
+<h2 id="浏览器设置sock5代理">浏览器设置sock5代理</h2>
+
+<p>下面说明firefox浏览器配置sock5代理。</p>
+
+<p>Options -&gt; Network settings -&gt; 选择Manual proxy configuration -&gt; 设置 Sock Host为本地代理IP，上例中为127.0.0.1 -&gt; port为本地代理端口，上例中为16666 -&gt; 选中 Proxy DNS when using SOCKS v5</p>
+
+<h1 id="linux命令行中使用sock5代理">linux命令行中使用sock5代理</h1>
+
+<p>可以使用proxychains。<a href="https://github.com/rofl0r/proxychains-ng">https://github.com/rofl0r/proxychains-ng</a></p>
+
+<p>需要自行编译</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">-b</span> v4.14 https://github.com/rofl0r/proxychains-ng.git
+proxychains-ng
+./configure <span class="nt">--prefix</span><span class="o">=</span>/usr <span class="nt">--sysconfdir</span><span class="o">=</span>/etc
+make
+make <span class="nb">install</span>
+<span class="c"># 安装配置文件/etc/proxychains.conf</span>
+make install-config
+</code></pre></div></div>
+
+<p>使用的话配置/etc/proxychains.conf</p>
+
+<p>设置</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 在[ProxyList]部分设置</span>
+<span class="c"># 127.0.0.1 16666是使用ssh -D 设置的本地sock5代理的IP和端口</span>
+socks5 127.0.0.1 16666
+</code></pre></div></div>
+
+<p>然后使用起来也比较简单，直接在需要代理的命令前面加上 proxychains4 。例如</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proxychains4 wget google.com
+</code></pre></div></div>
+
+  </div>
+
+  <!-- 显示评论和留言的,目前没有使用 --></div>
+
+    </section>
+
+    <!-- 响应式页面,移动端页面时的footer -->
+    <footer class="condensed">
+      
+
+      <!-- 如果设置了 社交标签，site.plainwhite.social_links 则显示 --><ul class="social about-footer condensed"><a href="https://github.com/zhangyww" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a></ul><!-- 如果设置了导航 site.plainwhite.navigation 则显示 --><!-- 显示copyright 取年份 -->
+      <p class="about-footer condensed">&copy;
+        2021</p>
+
+      <!-- 如果 site.plainwhite.dark_mode=true开启了黑暗主题，那么显示切换主题的按钮--><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div><!-- 结束采集footer变量内容 -->
+      
+    </footer>
+  </main>
+
+  <!-- 如果设置了 site.plainwhite.dark_mode为true,加载黑色主题的js -->
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+
+  <!-- 如果设置了页面分析的id,则加载google分析 --><!-- 如果设置了  site.plainwhite.search为true 则加载搜索需要用的js-->
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>
