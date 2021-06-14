@@ -587,7 +587,7 @@ green     #859900  operators, other keywords
   background-color: #f4f4f4; }
 
 div.highlight {
-  padding: 5px 20px; }
+  padding: 5px 12px; }
 
 pre.highlight, code {
   font-family: 'Consolas', Menlo, monospace;
@@ -821,6 +821,12 @@ main {
   .post h5,
   .post h6 {
     font-family: Raleway, sans-serif; }
+  .post h1 {
+    font-size: 1.5em; }
+  .post h2 {
+    font-size: 1.2em; }
+  .post h3 {
+    font-size: 1.0em; }
 
 .posts-labelgroup {
   margin: 0 0 0.67em 0;
