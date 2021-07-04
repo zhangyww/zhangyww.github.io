@@ -601,11 +601,17 @@ pre.highlight, code {
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2em;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 14px; } }
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px; } }
 
 img,
 embed,
@@ -770,7 +776,8 @@ main {
   min-height: 30px; }
   @media screen and (max-width: 768px) {
     .post-meta {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       align-items: baseline; }
       .post-meta .post-date {
         margin: 10px 0; } }
@@ -802,9 +809,9 @@ main {
   padding-left: 30px; }
 
 .post {
-  font-family: "Merriweather", sans-serif;
-  font-weight: 300;
-  color: #222;
+  font-family: "Microsoft Yahei", "Merriweather", sans-serif;
+  font-weight: 350;
+  color: #555;
   line-height: 1.9em; }
   .post p {
     margin-top: 10px; }
@@ -820,6 +827,7 @@ main {
   .post h4,
   .post h5,
   .post h6 {
+    color: #000;
     font-family: Raleway, sans-serif; }
   .post h1 {
     font-size: 1.5em; }

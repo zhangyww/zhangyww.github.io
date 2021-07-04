@@ -16,11 +16,17 @@ $leftWidth: 220px;
 
 body {
   font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2em;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media screen and (max-width: $smallMobileW) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: $mobileW) {
+    font-size: 14px;
+  }
 }
 
 img,
@@ -226,7 +232,8 @@ main {
   align-items: center;
   min-height: 30px;
   @media screen and (max-width: $mobileW) {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
     .post-date {
       margin: 10px 0;
@@ -259,9 +266,9 @@ main {
   padding-left: 30px;
 }
 .post {
-  font-family: "Merriweather", sans-serif;
-  font-weight: 300;
-  color: #222;
+  font-family: "Microsoft Yahei", "Merriweather", sans-serif;
+  font-weight: 350;
+  color: #555;
   line-height: 1.9em;
   p {
     margin-top: 10px;
@@ -280,6 +287,7 @@ main {
   h4,
   h5,
   h6 {
+    color: #000;
     font-family: Raleway, sans-serif;
   }
 
